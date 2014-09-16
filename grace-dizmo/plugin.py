@@ -248,6 +248,7 @@ class Dizmo:
         path = self._config['build_path']
         imagePNGSource = os.path.join(os.getcwd(), 'Icon.png')
         imageSVGSource = os.path.join(os.getcwd(), 'Icon.svg')
+        imageSVGSourceDark = os.path.join(os.getcwd(), 'Icon-dark.svg')
         imagePreviewSource = os.path.join(os.getcwd(), 'Preview.png')
 
         try:
@@ -266,6 +267,12 @@ class Dizmo:
                 copy(imageSVGSource, os.path.join(path, 'Icon.svg'))
             except:
                 print 'Could not copy your Icon.svg file.'
+
+        if os.path.isfile(imageSVGSourceDark):
+            try:
+                copy(imageSVGSourceDark, os.path.join(path, 'Icon-dark.svg'))
+            except:
+                print 'Could not copy your Icon-dark.svg file.'
 
         if os.path.isfile(imagePreviewSource):
             try:
